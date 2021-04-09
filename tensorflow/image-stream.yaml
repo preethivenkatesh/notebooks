@@ -1,0 +1,23 @@
+apiVersion: image.openshift.io/v1
+kind: ImageStream
+metadata:
+  annotations:
+    opendatahub.io/notebook-image-desc: "Jupyter notebook image with intel-tensorflow"
+    opendatahub.io/notebook-image-name: "Intel Tensorflow Notebook Image"
+    opendatahub.io/notebook-image-url: "https://github.com/kkasravi/notebooks"
+  labels:
+    opendatahub.io/notebook-image: "true"
+  name: intel-tensorflow-notebook
+  namespace: redhat-ods-applications
+spec:
+  lookupPolicy:
+    local: true
+  tags:
+  - annotations:
+      openshift.io/imported-from: docker.io/kkasravi/tensorflow-notebook
+    from:
+      kind: DockerImage
+      name: docker.io/kkasravi/tensorflow-notebook:latest
+    name: latest
+    referencePolicy:
+      type: Source
