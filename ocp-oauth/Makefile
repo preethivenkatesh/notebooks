@@ -1,19 +1,19 @@
 #
 #
 #
+generate:
+	oc new-app --template jupyterhub-ocp-oauth -oyaml > all.yaml && \
+	./process all.yaml items && \
+	rm -f all.yaml
+
+ungenerate:
+	rm -f *-*.yaml all.yaml
+
 deploy:
-	oc new-app --template jupyterhub-ocp-oauth
-	kubectl apply -f quickstart.yaml
+	kustomize build . | kubectl apply -f -
 
 undeploy:
 	oc delete all,configmap,pvc,serviceaccount,rolebinding --selector app=jupyterhub
-	kubectl delete -f quickstart.yaml
 
 status:
 	oc rollout status dc/jupyterhub
-
-deploy-template:
-	kustomize build . | kubectl apply -f -
-
-undeploy-template:
-	kustomize build . | kubectl delete -f -

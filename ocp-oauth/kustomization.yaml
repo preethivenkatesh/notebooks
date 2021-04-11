@@ -1,5 +1,23 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 namespace: kam
+configMapGenerator:
+- name: jupyterhub
+  files:
+  - jupyterhub_config.py
+generatorOptions:
+ disableNameSuffixHash: true
+ annotations:
+   openshift.io/generated-by: OpenShiftNewApp
+ labels:
+   app: jupyterhub
 resources:
-- template.yaml
+- image-stream-jupyterhub.yaml
+- service-account-jupyterhub-hub.yaml
+- role-binding-jupyterhub-edit.yaml
+- deployment-config-jupyterhub.yaml
+- service-jupyterhub.yaml
+- route-jupyterhub.yaml
+- persistent-volume-claim-jupyterhub-db.yaml
+- deployment-config-jupyterhub-db.yaml
+- service-jupyterhub-db.yaml

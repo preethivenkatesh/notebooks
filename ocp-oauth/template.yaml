@@ -50,25 +50,25 @@ objects:
           from:
             kind: DockerImage
             name: quay.io/odh-jupyterhub/jupyterhub:v${APPLICATION_VERSION}
-#  - kind: ImageStream
-#    apiVersion: image.openshift.io/v1
-#    metadata:
-#      name: ${NOTEBOOK_IMAGE}
-#      annotations:
-#        opendatahub.io/notebook-image-desc: "${NOTEBOOK_IMAGE}"
-#        opendatahub.io/notebook-image-name: "Intel Tensorflow Notebook Image"
-#        opendatahub.io/notebook-image-url: "https://github.com/kkasravi/notebooks"
-#      labels:
-#        opendatahub.io/notebook-image: "true"
-#        app: ${APPLICATION_NAME}
-#      spec:
-#        lookupPolicy:
-#          local: true
-#        tags:
-#          - name: latest
-#            from:
-#              kind: DockerImage
-#              name: quay.io/kamkasravi/tensorflow-notebook:latest
+  - kind: ImageStream
+    apiVersion: image.openshift.io/v1
+    metadata:
+      name: ${NOTEBOOK_IMAGE}
+      annotations:
+        opendatahub.io/notebook-image-desc: "${NOTEBOOK_IMAGE}"
+        opendatahub.io/notebook-image-name: "Intel Tensorflow Notebook Image"
+        opendatahub.io/notebook-image-url: "https://github.com/kkasravi/notebooks"
+      labels:
+        opendatahub.io/notebook-image: "true"
+        app: ${APPLICATION_NAME}
+      spec:
+        lookupPolicy:
+          local: true
+        tags:
+          - name: latest
+            from:
+              kind: DockerImage
+              name: quay.io/kamkasravi/tensorflow-notebook:latest
   - kind: ConfigMap
     apiVersion: v1
     metadata:
