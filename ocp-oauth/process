@@ -11,8 +11,8 @@ kind: Kustomization
 namespace: kam
 configMapGenerator:
 - name: jupyterhub
-  files:
-  - jupyterhub_config.py
+#  files:
+#  - jupyterhub_config.py
 generatorOptions:
  disableNameSuffixHash: true
  annotations:
