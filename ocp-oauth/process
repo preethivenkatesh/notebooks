@@ -31,7 +31,7 @@ for i in $(seq 0 $length); do
   if [[ $kind == "config-map" ]]; then
     continue
   fi
-  name=$(eval "echo $name")
+  echo 'i='$i' kind='$kind' name='$name
   cat $1 | eval "yq r - -P $2[$i]" > ${kind}-${name}.yaml
   echo '- '${kind}-${name}.yaml >> kustomization.yaml
 done
