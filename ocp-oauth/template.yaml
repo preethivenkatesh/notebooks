@@ -130,7 +130,7 @@ objects:
                 - name: JUPYTERHUB_SERVICE_NAME
                   value: ${APPLICATION_NAME}
                 - name: JUPYTERHUB_NOTEBOOK_IMAGE
-                  value: quay.io/kamkasravi/tensorflow-notebook:v0.0.1
+                  value: quay.io/kamkasravi/tensorflow-notebook:v0.0.2
                 - name: JUPYTERHUB_DATABASE_PASSWORD
                   value: ${DATABASE_PASSWORD}
                 - name: JUPYTERHUB_DATABASE_HOST
