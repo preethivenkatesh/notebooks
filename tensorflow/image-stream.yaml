@@ -14,10 +14,8 @@ spec:
     local: true
   tags:
   - annotations:
-      openshift.io/imported-from: docker.io/kkasravi/tensorflow-notebook
+      openshift.io/imported-from: quay.io/kamkasravi/tensorflow-notebook
     from:
       kind: DockerImage
-      name: docker.io/kkasravi/tensorflow-notebook:latest
-    name: latest
-    referencePolicy:
-      type: Source
+      name: quay.io/kamkasravi/tensorflow-notebook:v0.0.2
+    name: v0.0.2

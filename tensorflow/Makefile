@@ -7,3 +7,6 @@ build:
 
 push:
 	docker push quay.io/kamkasravi/tensorflow-notebook:v0.0.2
+
+deploy:
+	kubectl apply -f image-stream.yaml
