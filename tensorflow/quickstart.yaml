@@ -3,7 +3,7 @@ kind: ConsoleQuickStart
 metadata:
   name: intel-tensorflow-notebook
 spec:
-  conclusion: You just deployed an intel-tensorflow notebook.
+  conclusion: You just trained a model in an intel-tensorflow notebook.
   description: Run a tensorflow model in the intel-tensorflow notebook.
   displayName: Running a tensorflow model in the intel-tensorflow notebook
   durationMinutes: 10
