@@ -4,11 +4,11 @@ metadata:
   annotations:
     opendatahub.io/notebook-image-desc: "Jupyter notebook image with intel-tensorflow"
     opendatahub.io/notebook-image-name: "Intel Tensorflow Notebook Image"
-    opendatahub.io/notebook-image-url: "https://github.com/kkasravi/notebooks"
+    opendatahub.io/notebook-image-url: "https://github.com/preethivenkatesh/notebooks"
   labels:
     opendatahub.io/notebook-image: "true"
-  name: intel-tensorflow-notebook
-  namespace: redhat-ods-applications
+  name: intel-python-notebook
+  namespace: preethi-intel-tf
 spec:
   lookupPolicy:
     local: true
@@ -17,5 +17,5 @@ spec:
       openshift.io/imported-from: quay.io/kamkasravi/tensorflow-notebook
     from:
       kind: DockerImage
-      name: quay.io/kamkasravi/tensorflow-notebook:v0.0.2
-    name: v0.0.2
+      name: quay.io/preethi_venk7/intel-python-notebook:latest
+    name: latest
