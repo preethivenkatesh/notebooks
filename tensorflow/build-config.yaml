@@ -2,18 +2,18 @@ apiVersion: build.openshift.io/v1
 kind: BuildConfig
 metadata:
   labels:
-    build: intel-tensorflow-notebook
-  name: intel-tensorflow-notebook
+    build: intel-python-notebook
+  name: intel-python-notebook
 spec:
   output:
     to:
       kind: ImageStreamTag
-      name: intel-tensorflow-notebook:latest
+      name: intel-python-notebook:latest
   source:
     git:
-      uri: https://github.com/kkasravi/notebooks
+      uri: https://github.com/preethivenkatesh/notebooks
       ref: main
-    contextDir: tensorflow
+    contextDir: idp
     type: Git
   strategy:
     dockerStrategy:
